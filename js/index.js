@@ -1,14 +1,6 @@
 'use strict';
 
-var CommentBox = React.createClass({
-    render: function() {
-        return (
-            <div className="commentBox">
-                Hello, world! I am a CommentBox.
-            </div>
-        );
-    }
-});
+import CommentBox from './components/CommentBox.js';
 
 ReactDOM.render(
     <CommentBox />,

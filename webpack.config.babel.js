@@ -38,7 +38,7 @@ export default {
             }
         },
         {
-            reload: false
+            reload: true
         })
     ]
 }
