@@ -25,6 +25,10 @@ export default {
                         'react'
                     ]
                 }
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             }
         ]
     },
