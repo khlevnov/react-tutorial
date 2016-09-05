@@ -11,7 +11,7 @@ class CommentBox extends React.Component {
     componentDidMount() {
         this.loadComments();
         setInterval(() => {
-            this.loadComments();
+            //this.loadComments();
         }, 2000);
     }
     loadComments() {
@@ -23,12 +23,18 @@ class CommentBox extends React.Component {
                 });
             });
     }
+    handleCommentSubmit(comment) {
+        let comments = this.state.data;
+        comment.id = Date.now();
+        let newComments = comments.concat([comment]);
+        this.setState({data: newComments});
+    }
     render() {
         return (
             <div className="commentBox">
                 <h1>Comments</h1>
                 <CommentList data={this.state.data} />
-                <CommentForm />
+                <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} />
             </div>
         );
     }
